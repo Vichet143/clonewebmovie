@@ -14,7 +14,7 @@
 
   <div
     id="hs-slide-up-animation-modal1"
-    class="hs-overlay hidden fixed top-[-3.7%] end-[5%] sm:end-[20%] md:end-[36%] lg:end-[49%] xl:end-[58%] z-[10]"
+    class="hs-overlay hidden fixed top-[-3.7%] end-[2%] sm:end-[19%] md:end-[34%] lg:end-[49%] xl:end-[58%] z-[10]"
     role="dialog"
     tabindex="-1"
     aria-labelledby="hs-slide-up-animation-modal-label"
@@ -26,7 +26,7 @@
       class="hs-overlay-open:mt-7 colorprea hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-14 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto"
     >
       <div
-        class="w-[500px] sm:w-[576px] md:w-[768px] lg:w-[992px] xl:w-[1250px] flex flex-col bg-white shadow-2xs pointer-events-auto"
+        class="w-[380px] sm:w-[576px] md:w-[768px] lg:w-[992px] xl:min-w-[1250px] flex flex-col bg-white shadow-2xs pointer-events-auto"
         style="background-color: #303030"
       >
         <div class="flex justify-between items-center">
@@ -59,7 +59,7 @@
                     id="search"
                     v-model="query"
                     type="search"
-                    class="border-b-2 border-white w-[428px] sm:w-[505px] md:w-[695px] lg:w-[920px] xl:w-[1165px] bg-transparent text-gray-400 text-[20px] outline-0"
+                    class="border-b-2 border-white w-[310px] sm:w-[505px] md:w-[695px] lg:w-[920px] xl:w-[1165px] bg-transparent text-gray-400 text-[20px] outline-0"
                     placeholder="Search"
                   />
                 </label>

@@ -72,7 +72,7 @@
           >
             <div class="relative flex flex-col h-full max-h-full">
               <!-- Header -->
-              <header class="p-4 flex justify-between items-center gap-x-2">
+              <header class=" px-4 pb-[10px] flex justify-between items-center gap-x-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -325,7 +325,7 @@
               class="hs-overlay-animation-target hs-overlay-open:scale-100 hs-overlay-open:opacity-100 scale-95 opacity-0 ease-in-out transition-all duration-200 sm:max-w-lg sm:w-full m-3 sm:mx-auto min-h-[calc(100%-56px)] flex items-center text-center"
             >
               <div
-                class="w-[350px] fixed top-[40%] left-[15%] flex flex-col justify-center border-gray-200 shadow-2xs rounded-[5px] pointer-events-auto"
+                class="w-[350px] fixed top-[40%] left-[4%] flex flex-col justify-center border-gray-200 shadow-2xs rounded-[5px] pointer-events-auto"
                 style="background-color: #424242"
               >
                 <div class="flex justify-between items-center py-3 px-4">

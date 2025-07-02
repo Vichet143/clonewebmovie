@@ -33,7 +33,7 @@
             :key="index"
             :image="IMG_URL + item.backdrop_path"
             :title="item.original_name || item.title"
-            class="min-w-[250px] flex-shrink-0"
+            class="flex-shrink-0"
           />
         </div>
         <!-- Right Button -->

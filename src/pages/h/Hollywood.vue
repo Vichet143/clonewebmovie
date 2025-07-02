@@ -34,7 +34,7 @@
             :key="index"
             :image="item.show.image.medium"
             :title="item.show.name"
-            class="min-w-[250px] flex-shrink-0"
+            class=" flex-shrink-0"
           />
         </div>
         <!-- Right Button -->
