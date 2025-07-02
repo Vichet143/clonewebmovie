@@ -10,10 +10,9 @@
 </template>
 
 <script>
-import Footer from "./components/footer.vue";
+import Footer from "../src/components/Footer.vue";
 import Navbar from "./components/Navbar.vue";
 import Explore from "./pages/explore/Explore.vue";
-// import Explore from "./pages/explore/Explore.vue";
 export default {
   components: {
     Navbar,
@@ -22,7 +21,11 @@ export default {
     
   },
   mounted() {
-    setTimeout(() => window.HSStaticMethods.autoInit(), 100);
-  },
+    setTimeout(() => {
+      if (window.HSStaticMethods?.autoInit) {
+        window.HSStaticMethods.autoInit();
+      }
+    }, 100);
+  }
 };
 </script>
