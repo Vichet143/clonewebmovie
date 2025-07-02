@@ -21,11 +21,7 @@ export default {
     
   },
   mounted() {
-    setTimeout(() => {
-      if (window.HSStaticMethods?.autoInit) {
-        window.HSStaticMethods.autoInit();
-      }
-    }, 100);
-  }
+    setTimeout(() => window.HSStaticMethods.autoInit(), 100);
+  },
 };
 </script>
