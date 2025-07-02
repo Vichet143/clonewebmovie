@@ -14,7 +14,7 @@
 
   <div
     id="hs-slide-up-animation-modal1"
-    class="hs-overlay hidden fixed top-[-3.7%] end-[2%] sm:end-[19%] md:end-[34%] lg:end-[49%] xl:end-[58%] z-[10]"
+    class="hs-overlay hidden fixed top-[-3.7%] end-[-2%] sm:end-[19%] md:end-[34%] lg:end-[49%] xl:end-[58%] z-[10]"
     role="dialog"
     tabindex="-1"
     aria-labelledby="hs-slide-up-animation-modal-label"
@@ -26,7 +26,7 @@
       class="hs-overlay-open:mt-7 colorprea hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-14 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto"
     >
       <div
-        class="w-[380px] sm:w-[576px] md:w-[768px] lg:w-[992px] xl:min-w-[1250px] flex flex-col bg-white shadow-2xs pointer-events-auto"
+        class="w-[400px] h-full sm:w-[576px] md:w-[768px] lg:w-[992px] xl:min-w-[1250px] flex flex-col bg-white shadow-2xs pointer-events-auto"
         style="background-color: #303030"
       >
         <div class="flex justify-between items-center">
@@ -67,7 +67,7 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-wrap ml-[15px] mb-[10px]">
+        <div class="flex flex-wrap ml-[27px] sm:ml-[10px] mb-[10px]">
           <div
             v-for="(item, index) in categories"
             :key="index"
@@ -85,9 +85,9 @@
         </div>
         <div class="">
           <div
-            class="max-h-[690px] overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
+            class="h-[1200px] overflow-y-auto pb-[1000px]  [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
           >
-            <div class="mx-[10px]">
+            <div class="ml-[27px] sm:ml-[10px]">
               <div class="flex items-center relative">
                 <div class="w-[100] flex gap-[10px] flex-wrap">
                   <Cardforsearch

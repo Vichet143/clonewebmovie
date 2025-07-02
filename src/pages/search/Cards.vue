@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class=" mx-[10px]">
+    <div class=" ml-[27px] sm:ml-[10px]">
       <div class="flex items-center relative">
         <div class="w-full flex gap-[10px] flex-wrap">
           <Cardforsearch

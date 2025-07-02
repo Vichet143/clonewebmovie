@@ -1,9 +1,9 @@
 <template>
     <div
-      class="card object-contain w-[200px] sm:w-[269px] md:w-[240px] lg:w-[314px] xl:w-[298px] h-full md:object-fill flex-wrap grid bg-white border border-gray-200 rounded-[5px] shadow-sm bg-card dark:border-gray-700"
+      class="card object-contain w-[175px] sm:w-[269px] md:w-[240px] lg:w-[314px] xl:w-[298px] h-full md:object-fill grid bg-white border border-gray-200 rounded-[5px] shadow-sm bg-card dark:border-gray-700"
     >
       <img
-        class="rounded-t-[5px] h-[180px] lg:h-[200px] image"
+        class="rounded-t-[5px] md:h-[180px] lg:h-[200px] image"
         :src="image"
         alt="product image"
       />
