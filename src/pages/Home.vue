@@ -22,16 +22,6 @@ import Topkpopdrama from "./h/Topkpopdrama.vue";
 import Upcoming from "./h/Upcoming.vue";
 
 export default {
-  data() {
-    return {
-      // img: [
-      //     { image: "src/img/banner1.jpg" },
-      //     {image:"src/img/banner2.jpg"},
-      //     {image:"src/img/banner3.jpg"},
-      //     {image:"src/img/banner4.jpg"},
-      // ]
-    };
-  },
   components: {
     Herobanner,
     Contiuewatching,
