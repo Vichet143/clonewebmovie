@@ -1,0 +1,28 @@
+{
+  "name": "my-vue-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@hcaptcha/vanilla-hcaptcha": "^1.1.1",
+    "@tailwindcss/vite": "^4.1.7",
+    "axios": "^1.9.0",
+    "env": "^0.0.2",
+    "flowbite": "^3.1.2",
+    "pinia": "^3.0.2",
+    "preline": "^3.0.1",
+    "tailwindcss": "^4.1.7",
+    "vanilla-hcaptcha": "^1.0.3",
+    "vue": "^3.5.13",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.3",
+    "vite": "^6.3.5"
+  }
+}

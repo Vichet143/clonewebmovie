@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+.bgbody{
+    background-color: #303030;
+}
+.bgbodyw{
+    background-color: white;
+}
+.sizebar {
+    background-color: #303030;
+}
+
+.exact-active-link {
+    /* background-color: #424242; */
+    background-color: red;
+    /* Example border style */
+    border-radius: 5px;
+}
+.bgcategories{
+    background-color: #454545;
+    border: 1px solid #6f6f6f86;
+    border-radius: 20px;
+}
+.bg-faq {
+    background-color: #424242;
+    border: 1px solid #424242;
+}
+
+.bg-faq:hover {
+    background-color: #5856569f;
+}
+
+.bg-linkres {
+    background-color: #5856569f;
+}
+
+navho:hover {
+    background-color: #424242d1;
+}
+
+.bg-card {
+    background-color: #424242;
+}
+
+.image {
+    /* height: 180px !important; */
+    width: 100%;
+    /* object-fit: fill; */
+}
+
+.mfaq {
+    margin-top: 20px;
+}
+
+.ciconfaq {
+    background-color: #4267B2;
+}
+
+.bg-resquest {
+    background-color: #00000060;
+}
+.deepin{
+    background-color: #673AB7;
+}
+.bgnavrouter{
+    background-color: white;
+}
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+}
+
+.colorprea{
+    background-color: rgba(240, 248, 255, 0.477);
+}
+
+/* for search area */
+
+.bgsearch{
+    background-color: rgba(240, 248, 255, 0.186);
+}
