@@ -59,7 +59,7 @@
                     id="search"
                     v-model="query"
                     type="search"
-                    class="border-b-2 border-white w-[310px] sm:w-[505px] md:w-[695px] lg:w-[920px] xl:w-[1165px] bg-transparent text-gray-400 text-[20px] outline-0"
+                    class="border-b-2 autofo border-white w-[310px] sm:w-[505px] md:w-[695px] lg:w-[920px] xl:w-[1165px] bg-transparent text-gray-400 text-[20px] outline-none px-2 py-1"
                     placeholder="Search"
                   />
                 </label>
