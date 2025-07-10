@@ -12,7 +12,7 @@
 
   <div
     id="hs-slide-up-animation-modal1"
-    class="hs-overlay hidden fixed top-[-2%] end-[-5%] sm:end-[19%] md:end-[34%] lg:end-[49%] xl:end-[58%] z-[111]"
+    class="hs-overlay hidden fixed top-[-27px] end-[-5%] sm:end-[19%] md:end-[34%] lg:end-[49%] xl:end-[58%] z-[111]"
     role="dialog"
     tabindex="-1"
     aria-labelledby="hs-slide-up-animation-modal-label"
@@ -30,7 +30,7 @@
         <div class="flex justify-between items-center">
           <div class="grid space-y-2">
             <div
-              class="bg-white dark:bg-gray-950 w-[1250px] h-[63px] flex items-center"
+              class="bg-white border dark:bg-gray-950 w-[1250px] h-[63px] flex items-center"
             >
               <button
                 class="flex items-center justify-center px-6 h-10 text-white hover:bg-white/10 transition"

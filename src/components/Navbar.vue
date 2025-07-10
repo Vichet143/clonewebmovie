@@ -158,7 +158,7 @@
                     </li>
 
                     <li
-                      class="hs-accordion inline-block bg-amber-950 w-full"
+                      class="hs-accordion inline-block w-full"
                       id="account-accordion"
                     >
                       <router-link
