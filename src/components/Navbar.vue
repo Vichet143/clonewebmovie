@@ -72,7 +72,9 @@
           >
             <div class="relative flex flex-col h-full max-h-full">
               <!-- Header -->
-              <header class=" px-4 pb-[10px] flex justify-between items-center gap-x-2">
+              <header
+                class="px-4 pb-[10px] flex justify-between items-center gap-x-2"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -155,17 +157,20 @@
                       </router-link>
                     </li>
 
-                    <li class="hs-accordion" id="account-accordion">
+                    <li
+                      class="hs-accordion inline-block bg-amber-950 w-full"
+                      id="account-accordion"
+                    >
                       <router-link
                         aria-haspopup="dialog"
                         aria-expanded="false"
                         aria-controls="hs-sidebar-offcanvas"
                         aria-label="Toggle"
                         data-hs-overlay="#hs-sidebar-offcanvas"
-                        class="text-gray-500 block transition pr-[16px] p-[10px] font-[600] text-[15px] dark:text-white"
+                        class="text-gray-500 inline-block transition pr-[16px] p-[10px] font-[600] text-[15px] dark:text-white"
                         to="/faq"
                         ><i
-                          class="fa-solid fa-message mx-[10px] text-[18px]"
+                          class="fa-solid inline-block fa-message px-[10px] text-[18px]"
                         ></i>
                         FAQ
                       </router-link>
@@ -204,18 +209,18 @@
                     </li>
                     <!-- Modal - place outside the <li> -->
                     <div
-                      class="hs-overlay fixed top-[27%] end-[17%] z-80 overflow-x-hidden overflow-y-auto"
+                      class="hs-overlay fixed top-[35%] end-[8.5%] sm:top-[19%] sm:end-[9%] z-80 overflow-x-hidden overflow-y-auto"
                       v-if="showtheme"
                     >
                       <div
-                        class="hs-overlay-open:mt-7 w-[250px] hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-14 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto"
+                        class="hs-overlay-open:mt-7 w-[170px] hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-14 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto"
                       >
                         <div
                           class="w-[250px] flex flex-col bg-white shadow-2xs rounded-[5px] pointer-events-auto"
                           style="background-color: #424242"
                         >
                           <div
-                            class="flex justify-between items-center py-3 px-4"
+                            class="flex justify-between items-center py-3 px-2"
                           >
                             <div class="grid space-y-2">
                               <label
@@ -229,7 +234,7 @@
                                   class="size-5 border-gray-200 text-blue-600 focus:ring-blue-500 checked:border-blue-500 disabled:opacity-50 disabled:pointer-events-none"
                                   id="radio1"
                                 />
-                                <span class="text-sm text-white ms-3"
+                                <span class="text-[10px] sm:text-sm text-white ms-3"
                                   >Deep Purple & Amber
                                   <i
                                     class="fa-solid fa-gear ml-[5px] text-[18px] text-purple-600"
@@ -246,7 +251,7 @@
                                   class="shrink-0 size-5 border-gray-200 text-blue-600 focus:ring-blue-500 checked:border-blue-500 disabled:opacity-50 disabled:pointer-events-none"
                                   id="radio2"
                                 />
-                                <span class="text-sm text-white ms-3"
+                                <span class="text-[10px] sm:text-sm text-white ms-3"
                                   >Indigo & Pink
                                   <i
                                     class="fa-solid fa-gear ml-[5px] text-[18px] text-blue-500"
@@ -263,7 +268,7 @@
                                   class="size-5 border-gray-200 text-blue-600 focus:ring-blue-500 checked:border-blue-500 disabled:opacity-50 disabled:pointer-events-none"
                                   id="radio3"
                                 />
-                                <span class="text-sm text-white ms-3"
+                                <span class="text-[10px] sm:text-sm text-white ms-3"
                                   >Pink & Blue-grey
                                   <i
                                     class="fa-solid fa-gear ml-[5px] text-[18px] text-red-700"
@@ -281,7 +286,7 @@
                                   class="size-5 border-gray-200 text-blue-600 focus:ring-blue-500 checked:border-blue-500 disabled:opacity-50 disabled:pointer-events-none"
                                   id="radio4"
                                 />
-                                <span class="text-sm text-white ms-3"
+                                <span class="text-[10px] sm:text-sm text-white ms-3"
                                   >Purple & Green
                                   <i
                                     class="fa-solid fa-gear ml-[5px] text-[18px] text-pink-500"
@@ -410,7 +415,7 @@
                   class="text-gray-500 transition pr-[16px] p-[10px] font-[600] text-[15px] dark:text-white hidden lg:flex"
                   to="/"
                   ><i class="fa-solid fa-house mx-[10px] text-[18px]"></i>
-                  Home
+                  <span>Home</span>
                 </router-link>
               </li>
 
@@ -419,7 +424,7 @@
                   class="text-gray-500 transition pr-[16px] p-[10px] font-[600] text-[15px] dark:text-white hidden lg:flex"
                   to="/faq"
                   ><i class="fa-solid fa-message mx-[10px] text-[18px]"></i>
-                  FAQ
+                  <span>FAQ</span>
                 </router-link>
               </li>
 
@@ -431,10 +436,10 @@
               </li>
               <li class="">
                 <router-link
-                  class="text-gray-500 transition pr-[16px] p-[10px] font-[600] text-[15px] dark:text-white hidden lg:flex"
+                  class="text-gray-500 transition pr-[16px] w-full p-[10px] font-[600] text-[15px] dark:text-white hidden lg:flex"
                   to="/explore"
                   ><i class="fa-brands fa-leanpub mx-[10px] text-[18px]"></i>
-                  Explore
+                  <span>Explore</span>
                 </router-link>
               </li>
 

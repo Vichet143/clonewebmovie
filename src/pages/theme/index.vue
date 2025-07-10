@@ -1,14 +1,13 @@
 <template>
-  <a
-    class="text-gray-500 transition p-[10px] font-[600] text-[15px] dark:text-white hidden lg:flex"
-    href="#"
+  <div
+    class="text-gray-500 transition  p-[10px] font-[600] text-[15px] dark:text-white hidden lg:flex cursor-pointer"
     aria-haspopup="dialog"
     aria-expanded="false"
     aria-controls="hs-slide-up-animation-modal"
     data-hs-overlay="#hs-slide-up-animation-modal"
     ><i class="fa-brands fa-buffer mx-[10px] text-[18px]"></i>
     Theme
-  </a>
+</div>
   <div
     id="hs-slide-up-animation-modal"
     class="hs-overlay fixed top-[3%] end-[19%] z-80 overflow-x-hidden overflow-y-auto"

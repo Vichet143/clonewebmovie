@@ -1,20 +1,18 @@
 <template>
-  <li class="">
-    <a
-      class="text-gray-500 transition font-[600] pr-[15px] p-[10px] text-[15px] dark:text-white flex"
-      href="#"
-      aria-haspopup="dialog"
-      aria-expanded="false"
-      aria-controls="hs-slide-up-animation-modal1"
-      data-hs-overlay="#hs-slide-up-animation-modal1"
-      ><i class="fa-brands fa-sistrix mx-[10px] text-[18px]"></i>
-      <span class="hidden lg:block">Search</span>
-    </a>
-  </li>
+  <div
+    class="text-gray-500 transition font-[600] pr-[15px] p-[10px] text-[15px] dark:text-white flex cursor-pointer"
+    aria-haspopup="dialog"
+    aria-expanded="false"
+    aria-controls="hs-slide-up-animation-modal1"
+    data-hs-overlay="#hs-slide-up-animation-modal1"
+  >
+    <i class="fa-brands fa-sistrix mx-[10px] inline-block text-[18px]"></i>
+    <span class="hidden lg:block">Search</span>
+  </div>
 
   <div
     id="hs-slide-up-animation-modal1"
-    class="hs-overlay hidden fixed top-[-3.7%] end-[-2%] sm:end-[19%] md:end-[34%] lg:end-[49%] xl:end-[58%] z-[10]"
+    class="hs-overlay hidden fixed top-[-2%] end-[-5%] sm:end-[19%] md:end-[34%] lg:end-[49%] xl:end-[58%] z-[111]"
     role="dialog"
     tabindex="-1"
     aria-labelledby="hs-slide-up-animation-modal-label"
@@ -53,17 +51,19 @@
                   />
                 </svg>
               </button>
-              <form @submit.prevent="searchTVShows">
-                <label>
-                  <input
-                    id="search"
-                    v-model="query"
-                    type="search"
-                    class="border-b-2 autofo border-white w-[310px] sm:w-[505px] md:w-[695px] lg:w-[920px] xl:w-[1165px] bg-transparent text-gray-400 text-[20px] outline-none px-2 py-1"
-                    placeholder="Search"
-                  />
-                </label>
-              </form>
+              <div class="inline-block">
+                <form @submit.prevent="searchTVShows">
+                  <label>
+                    <input
+                      id="search"
+                      v-model="query"
+                      type="search"
+                      class="border-b-2 border-white outline-none w-[310px] sm:w-[505px] md:w-[695px] lg:w-[920px] xl:w-[1165px] bg-transparent text-gray-400 text-[20px] px-2 py-[5px]"
+                      placeholder="Search"
+                    />
+                  </label>
+                </form>
+              </div>
             </div>
           </div>
         </div>
@@ -85,7 +85,7 @@
         </div>
         <div class="">
           <div
-            class="h-[1200px] overflow-y-auto pb-[1000px]  [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
+            class="h-[1200px] overflow-y-auto pb-[1000px] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
           >
             <div class="ml-[27px] sm:ml-[10px]">
               <div class="flex items-center relative">
@@ -99,7 +99,7 @@
                 </div>
               </div>
             </div>
-            <Cards v-if="hidemoviezin < 1 "></Cards>
+            <Cards v-if="hidemoviezin < 1"></Cards>
           </div>
         </div>
       </div>

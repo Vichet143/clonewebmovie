@@ -22,5 +22,5 @@
         </div>
       </div>
     </section>
-    <div class="mb-[230px]"></div>
+    <div class="mb-[760px]"></div>
   </template>
