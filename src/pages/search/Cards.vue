@@ -1,8 +1,8 @@
 <template>
   <section>
     <div class=" ml-[27px] sm:ml-[10px]">
-      <div class="flex items-center relative">
-        <div class="w-full flex gap-[10px] flex-wrap">
+      <div class="flex items-center  relative">
+        <div class="w-full flex justify-center gap-[10px] flex-wrap">
           <Cardforsearch
             v-for="(item, index) in upcomingrepository"
             :key="index"
