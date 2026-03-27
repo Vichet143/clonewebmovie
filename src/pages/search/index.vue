@@ -1,106 +1,97 @@
 <template>
   <div
     class="text-gray-500 transition font-[600] pr-[15px] p-[10px] text-[15px] dark:text-white flex cursor-pointer"
+    role="button"
+    tabindex="0"
     aria-haspopup="dialog"
-    aria-expanded="false"
-    aria-controls="hs-slide-up-animation-modal1"
-    data-hs-overlay="#hs-slide-up-animation-modal1"
+    :aria-expanded="showSearchModal ? 'true' : 'false'"
+    @click="openSearchModal"
+    @keydown.enter.prevent="openSearchModal"
+    @keydown.space.prevent="openSearchModal"
   >
     <i class="fa-brands fa-sistrix mx-[10px] inline-block text-[18px]"></i>
     <span class="hidden lg:block">Search</span>
   </div>
 
   <div
-    id="hs-slide-up-animation-modal1"
-    class="hs-overlay hidden fixed top-[-27px] end-[-5%] sm:end-[19%] md:end-[34%] lg:end-[49%] xl:end-[58%] z-[111]"
+    v-if="showSearchModal"
+    class="fixed inset-0 z-[111]"
     role="dialog"
     tabindex="-1"
     aria-labelledby="hs-slide-up-animation-modal-label"
   >
     <!-- Background overlay -->
-    <div class="fixed inset-0 bg-black/50 z-[-1]"></div>
+    <div class="absolute inset-0 bg-black/50" @click="closeSearchModal"></div>
 
+    <!-- Modal -->
     <div
-      class="hs-overlay-open:mt-7 colorprea hs-overlay-open:opacity-100 hs-overlay-open:duration-500 mt-14 opacity-0 ease-out transition-all sm:max-w-lg sm:w-full m-3 sm:mx-auto"
+      class="relative z-50 colorprea mt-7 opacity-100 transition-all sm:max-w-5xl w-full m-3 sm:mx-auto"
     >
       <div
-        class="w-[400px] h-full sm:w-[576px] md:w-[768px] lg:w-[992px] xl:min-w-[1250px] flex flex-col bg-white shadow-2xs pointer-events-auto"
+        class="w-full flex flex-col bg-white shadow-2xs pointer-events-auto rounded-lg"
         style="background-color: #303030"
       >
-        <div class="flex justify-between items-center">
-          <div class="grid space-y-2">
-            <div
-              class="bg-white border dark:bg-gray-950 w-[1250px] h-[63px] flex items-center"
+        <!-- Header with close + input -->
+        <div
+          class="flex items-center bg-white dark:bg-gray-950 w-full h-[63px] px-2"
+        >
+          <!-- Close button -->
+          <button
+            class="flex items-center justify-center px-6 h-10 text-white hover:bg-white/10 transition"
+            type="button"
+            @click="closeSearchModal"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="48"
+              viewBox="0 0 48 48"
             >
-              <button
-                class="flex items-center justify-center px-6 h-10 text-white hover:bg-white/10 transition"
-                aria-haspopup="dialog"
-                aria-expanded="false"
-                aria-controls="hs-slide-up-animation-modal1"
-                data-hs-overlay="#hs-slide-up-animation-modal1"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="48"
-                  viewBox="0 0 48 48"
-                >
-                  <path
-                    d="M36.121,3.293,34.707,1.879a1,1,0,0,0-1.414,0L11.879,23.293a1,1,0,0,0,0,1.414L33.293,46.121a1,1,0,0,0,1.414,0l1.414-1.414a1,1,0,0,0,0-1.414L16.828,24,36.121,4.707A1,1,0,0,0,36.121,3.293Z"
-                    fill="#FFFFFF"
-                  />
-                </svg>
-              </button>
-              <div class="inline-block">
-                <form @submit.prevent="searchTVShows">
-                  <label>
-                    <input
-                      id="search"
-                      v-model="query"
-                      type="search"
-                      class="border-b-2 border-white outline-none w-[310px] sm:w-[505px] md:w-[695px] lg:w-[920px] xl:w-[1165px] bg-transparent text-gray-400 text-[20px] px-2 py-[5px]"
-                      placeholder="Search"
-                    />
-                  </label>
-                </form>
+              <path
+                d="M36.121,3.293,34.707,1.879a1,1,0,0,0-1.414,0L11.879,23.293a1,1,0,0,0,0,1.414L33.293,46.121a1,1,0,0,0,1.414,0l1.414-1.414a1,1,0,0,0,0-1.414L16.828,24,36.121,4.707A1,1,0,0,0,36.121,3.293Z"
+                fill="#FFFFFF"
+              />
+            </svg>
+          </button>
+
+          <!-- Search input -->
+          <form @submit.prevent="searchTVShows" class="flex w-full">
+            <input
+              v-model="query"
+              @input="handleSearchInput"
+              type="search"
+              class="flex-1 border-b-2 border-white outline-none bg-transparent text-gray-400 text-[20px] px-2 py-[5px]"
+              placeholder="Search"
+            />
+          </form>
+        </div>
+
+        <!-- Search Results -->
+        <div
+          class="h-[calc(100vh-70px)] overflow-y-auto pb-[100px] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
+        >
+          <div
+            v-if="hidemoviezin > 0 && movies.length < 1"
+            class="px-8 py-6 text-gray-300"
+          >
+            No results found for "{{ query }}".
+          </div>
+
+          <div v-else class="ml-[27px] sm:ml-[10px]">
+            <div class="flex items-center relative">
+              <div class="w-full flex gap-[10px] flex-wrap">
+                <Cardforsearch
+                  v-for="(movie, index) in movies"
+                  :key="index"
+                  :image="
+                    movie.show.image?.medium || movie.show.image?.original
+                  "
+                  :title="movie.show.name"
+                />
               </div>
             </div>
           </div>
-        </div>
-        <div class="flex flex-wrap ml-[27px] sm:ml-[10px] mb-[10px]">
-          <div
-            v-for="(item, index) in categories"
-            :key="index"
-            @click="navigateToCategory(item.id)"
-            class="cursor-pointer"
-            :class="[
-              'mt-[10px] py-[4px] px-[15px] w-fit font-[500] text-[15px] rounded-[20px] mr-[10px] cursor-pointer',
-              selectedId === item.id
-                ? 'bg-white text-black'
-                : 'bgcategories text-white',
-            ]"
-          >
-            {{ item.name }}
-          </div>
-        </div>
-        <div class="">
-          <div
-            class="h-[1200px] overflow-y-auto pb-[1000px] [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-track]:bg-neutral-700 dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
-          >
-            <div class="ml-[27px] sm:ml-[10px]">
-              <div class="flex items-center relative">
-                <div class="w-full flex gap-[10px] flex-wrap">
-                  <Cardforsearch
-                    v-for="(movie, index) in movies"
-                    :key="index"
-                    :image="movie.show.image?.medium"
-                    :title="movie.show.name"
-                  ></Cardforsearch>
-                </div>
-              </div>
-            </div>
-            <Cards v-if="hidemoviezin < 1"></Cards>
-          </div>
+          <Cards v-if="hidemoviezin < 1" />
         </div>
       </div>
     </div>
@@ -120,6 +111,7 @@ export default {
     return {
       hidemoviezin: 0,
       selectedId: 1,
+      showSearchModal: false,
       categories: [
         { name: "All", id: 1 },
         { name: "TvSeries", id: 2 },
@@ -129,6 +121,7 @@ export default {
       ],
       query: "",
       movies: [],
+      searchTimeout: null,
     };
   },
   methods: {
@@ -147,24 +140,42 @@ export default {
       return routeId === id ? "bg-white text-black" : "bgcategories text-white";
     },
     async searchTVShows() {
-      if (!this.query) return;
+      const searchQuery = this.query.trim();
+
+      if (!searchQuery) {
+        this.movies = [];
+        this.hidemoviezin = 0;
+        return;
+      }
 
       try {
         const res = await fetch(
-          `https://api.tvmaze.com/search/shows?q=${this.query}`
+          `https://api.tvmaze.com/search/shows?q=${encodeURIComponent(searchQuery)}`,
         );
         const data = await res.json();
         this.movies = data.filter(
           (movie) =>
             movie.show &&
             movie.show.image &&
-            movie.show.image.medium &&
-            movie.show.name
+            (movie.show.image.medium || movie.show.image.original) &&
+            movie.show.name,
         );
         this.hidemoviezin = 1;
       } catch (error) {
         console.error("Error fetching TV shows:", error);
       }
+    },
+    handleSearchInput() {
+      clearTimeout(this.searchTimeout);
+      this.searchTimeout = setTimeout(() => {
+        this.searchTVShows();
+      }, 300);
+    },
+    openSearchModal() {
+      this.showSearchModal = true;
+    },
+    closeSearchModal() {
+      this.showSearchModal = false;
     },
   },
 };
