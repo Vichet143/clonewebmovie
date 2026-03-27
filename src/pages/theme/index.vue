@@ -100,3 +100,17 @@
     </div>
   </div>
 </template>
+
+<script>
+  import { deep } from '../../js/navbarchangecolor';
+  import { purple } from '../../js/purple';
+  export default{
+    methods: {
+    deep,
+    purple,
+    handleshowtheme() {
+      this.showtheme = !this.showtheme;
+    },
+  },
+  }
+</script>
