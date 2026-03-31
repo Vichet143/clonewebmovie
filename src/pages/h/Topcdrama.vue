@@ -36,6 +36,9 @@
             :key="index"
             :image="IMG_URL + item.backdrop_path"
             :title="item.original_name"
+            :item-id="item.id"
+            source="tmdb"
+            media-type="tv"
             class="flex-shrink-0"
           />
         </div>

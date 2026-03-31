@@ -8,14 +8,17 @@
             :key="index"
             :image="IMG_URL + item.backdrop_path"
             :title="item.original_name"
+            :item-id="item.id"
+            source="tmdb"
+            media-type="tv"
           />
         </div>
       </div>
     </div>
   </section>
 </template>
-      
-  <script>
+
+<script>
 import Cardforexplore from "../../components/Cardforexplore.vue";
 import moviekdramaRepositoryStore, { IMG_URL } from "../../store/apltopkdrama";
 import { mapActions, mapState } from "pinia";
@@ -32,7 +35,7 @@ export default {
     paginatedkRepository() {
       return this.krepository.slice(
         this.currentIndex,
-        this.currentIndex + this.pageSize
+        this.currentIndex + this.pageSize,
       );
     },
   },
@@ -73,4 +76,3 @@ export default {
   },
 };
 </script>
-      

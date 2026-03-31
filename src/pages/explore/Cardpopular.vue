@@ -8,14 +8,17 @@
             :key="index"
             :image="IMG_URL + item.backdrop_path"
             :title="item.title"
+            :item-id="item.id"
+            source="tmdb"
+            media-type="movie"
           />
         </div>
       </div>
     </div>
   </section>
 </template>
-        
-    <script>
+
+<script>
 import Cardforexplore from "../../components/Cardforexplore.vue";
 import movieupcomingdramaRepositoryStore, {
   IMG_URL,
@@ -34,14 +37,12 @@ export default {
     paginatedupcomingRepository() {
       return this.upcomingrepository.slice(
         this.currentIndex,
-        this.currentIndex + this.pageSize
+        this.currentIndex + this.pageSize,
       );
     },
   },
   methods: {
-    ...mapActions(movieupcomingdramaRepositoryStore, [
-      "fetchRepository",
-    ]),
+    ...mapActions(movieupcomingdramaRepositoryStore, ["fetchRepository"]),
     prevPage() {
       if (this.currentIndex - this.pageSize >= 0) {
         this.currentIndex -= this.pageSize;
@@ -77,4 +78,3 @@ export default {
   },
 };
 </script>
-        

@@ -34,7 +34,10 @@
             :key="index"
             :image="item.show.image.medium"
             :title="item.show.name"
-            class=" flex-shrink-0"
+            :item-id="item.show.id"
+            source="tvmaze"
+            media-type="tv"
+            class="flex-shrink-0"
           />
         </div>
         <!-- Right Button -->
@@ -58,7 +61,7 @@
     </div>
   </section>
 </template>
-        
+
 <script>
 import Card from "../../components/Card.vue";
 import movieholydramaRepositoryStore from "../../store/hollywood";
@@ -121,4 +124,3 @@ export default {
   },
 };
 </script>
-        

@@ -8,14 +8,17 @@
             :key="index"
             :image="IMG_URL + item.backdrop_path"
             :title="item.title"
+            :item-id="item.id"
+            source="tmdb"
+            media-type="movie"
           />
         </div>
       </div>
     </div>
   </section>
 </template>
-    
-    <script>
+
+<script>
 import Cardforexplore from "../../components/Cardforexplore.vue";
 import movieRepositoryStore, { IMG_URL } from "../../store/apllastestupdate";
 import { mapActions, mapState } from "pinia";
@@ -32,7 +35,7 @@ export default {
     paginatedRepository() {
       return this.repository.slice(
         this.currentIndex,
-        this.currentIndex + this.pageSize
+        this.currentIndex + this.pageSize,
       );
     },
   },
@@ -73,4 +76,3 @@ export default {
   },
 };
 </script>
-    

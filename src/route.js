@@ -4,6 +4,7 @@ import Faq from './pages/faq/Faq.vue';
 import Explore from './pages/explore/Explore.vue';
 import Allexplore from './pages/explore/Allexplore.vue';
 import Page404 from './pages/404page/page404.vue';
+import MovieDetail from './pages/detail/index.vue';
 
 // Wrapper component that will choose what to show
 import Explorewapper from './pages/explore/Explorewapper.vue';
@@ -19,6 +20,7 @@ const routes = [
             { path: ':id', component: Explorewapper, props: true, },
         ]
     },
+    { path: '/movie-detail/:source/:id', component: MovieDetail, props: true },
     { path: '/:pathMatch(.*)*', name: 'NotFound', component: Page404 }
 ];
 
