@@ -70,7 +70,7 @@
             tabindex="-1"
             aria-label="Sidebar"
           >
-            <div class="relative flex flex-col h-full max-h-full">
+            <div class="relative flex flex-col h-full max-h-full pt-6">
               <!-- Header -->
               <header
                 class="px-4 pb-[10px] flex justify-between items-center gap-x-2"
@@ -129,7 +129,6 @@
                   href="#"
                 >
                   <span class="sr-only">Home</span>
-                  <img class="w-[130px]" src="/src/img/logo.png" alt="" />
                 </a>
               </header>
               <div class="w-[100%] border-1 border-gray-500 mb-[10px]"></div>
@@ -403,7 +402,7 @@
             href="#"
           >
             <span class="sr-only">Home</span>
-            <img class="w-[130px]" src="/src/img/logo.png" alt="" />
+            <h1 class="text-white ml-2 text-2xl font-bold"><span class="text-yellow-300">KH</span>Sbay</h1>
           </a>
         </div>
 
