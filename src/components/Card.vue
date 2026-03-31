@@ -1,5 +1,7 @@
 <template>
-  <div
+  <component
+    :is="itemId ? 'router-link' : 'div'"
+    :to="itemId ? detailRoute : undefined"
     class="card w-[200px] sm:w-[250px] md:w-[320px] object-contain lg:w-[320px] md:object-fill grid bg-white border border-gray-200 rounded-[5px] shadow-sm bg-card dark:border-gray-700"
   >
     <img
@@ -14,11 +16,34 @@
         {{ title }}
       </p>
     </div>
-  </div>
+  </component>
 </template>
 
 <script>
 export default {
-  props: ["image", "title"],
+  props: {
+    image: String,
+    title: String,
+    itemId: [String, Number],
+    source: {
+      type: String,
+      default: "tmdb",
+    },
+    mediaType: {
+      type: String,
+      default: "movie",
+    },
+  },
+  computed: {
+    detailRoute() {
+      return {
+        path: `/movie-detail/${this.source}/${this.itemId}`,
+        query: {
+          mediaType: this.mediaType,
+          from: this.$route.fullPath,
+        },
+      };
+    },
+  },
 };
 </script>

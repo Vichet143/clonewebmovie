@@ -33,7 +33,10 @@
             :key="index"
             :image="item.show.image.medium"
             :title="item.show.name"
-            class=" flex-shrink-0"
+            :item-id="item.show.id"
+            source="tvmaze"
+            media-type="tv"
+            class="flex-shrink-0"
           />
         </div>
         <!-- Right Button -->
@@ -57,8 +60,8 @@
     </div>
   </section>
 </template>
-          
-  <script>
+
+<script>
 import Card from "../../components/Card.vue";
 import movieanimedramaRepositoryStore from "../../store/anime";
 import { mapActions, mapState } from "pinia";
@@ -120,4 +123,3 @@ export default {
   },
 };
 </script>
-          

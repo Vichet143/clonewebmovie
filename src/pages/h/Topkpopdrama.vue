@@ -36,6 +36,9 @@
             :key="index"
             :image="IMG_URL + item.backdrop_path"
             :title="item.original_name"
+            :item-id="item.id"
+            source="tmdb"
+            media-type="tv"
             class="flex-shrink-0"
           />
         </div>
@@ -81,21 +84,21 @@ export default {
     ...mapState(moviekdramaRepositoryStore, ["krepository"]),
   },
   mounted() {
-  this.fetchkRepository();
-  this.$nextTick(() => {
+    this.fetchkRepository();
+    this.$nextTick(() => {
+      const container = this.$refs.kdramaContainer;
+      if (container) {
+        container.addEventListener("scroll", this.updateArrowVisibility);
+        this.updateArrowVisibility();
+      }
+    });
+  },
+  unmounted() {
     const container = this.$refs.kdramaContainer;
     if (container) {
-      container.addEventListener("scroll", this.updateArrowVisibility);
-      this.updateArrowVisibility();
+      container.removeEventListener("scroll", this.updateArrowVisibility);
     }
-  });
-},
-unmounted() {
-  const container = this.$refs.kdramaContainer;
-  if (container) {
-    container.removeEventListener("scroll", this.updateArrowVisibility);
-  }
-},
+  },
 
   methods: {
     ...mapActions(moviekdramaRepositoryStore, ["fetchkRepository"]),

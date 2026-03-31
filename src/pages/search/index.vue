@@ -87,6 +87,9 @@
                     movie.show.image?.medium || movie.show.image?.original
                   "
                   :title="movie.show.name"
+                  :item-id="movie.show.id"
+                  source="tvmaze"
+                  media-type="tv"
                 />
               </div>
             </div>

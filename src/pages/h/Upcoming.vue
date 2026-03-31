@@ -33,6 +33,9 @@
             :key="index"
             :image="IMG_URL + item.backdrop_path"
             :title="item.original_name || item.title"
+            :item-id="item.id"
+            source="tmdb"
+            media-type="movie"
             class="flex-shrink-0"
           />
         </div>
@@ -57,10 +60,12 @@
     </div>
   </section>
 </template>
-      
-  <script>
+
+<script>
 import Card from "../../components/Card.vue";
-import movieupcomingdramaRepositoryStore,{IMG_URL} from "../../store/upcoming";
+import movieupcomingdramaRepositoryStore, {
+  IMG_URL,
+} from "../../store/upcoming";
 import { mapActions, mapState } from "pinia";
 
 export default {
@@ -120,4 +125,3 @@ export default {
   },
 };
 </script>
-      
