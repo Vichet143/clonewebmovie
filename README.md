@@ -1,5 +1,57 @@
-# Vue 3 + Vite
+# CloneWebMovie
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+CloneWebMovie is a Vue 3 + Vite single-page application for browsing movie content, with sectioned explore pages, movie detail routing, search support, FAQ, and custom Tailwind UI styling.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Features
+
+- Vue 3 with Vite development tooling
+- Vue Router for SPA navigation
+- Pinia state management
+- Tailwind CSS + Flowbite + Preline UI styling
+- hCaptcha integration support for forms
+- Responsive movie explore, search, and detail pages
+- 404 fallback route for unknown URLs
+
+## Project Structure
+
+- `src/` - Vue application source
+- `src/main.js` - app bootstrap and router/pinia setup
+- `src/App.vue` - layout with navbar, footer, and router view
+- `src/route.js` - app route definitions
+- `src/pages/` - page views and feature sections
+- `src/components/` - reusable UI components
+- `src/store/` - Pinia stores and API modules
+- `public/` - static public assets
+
+## Requirements
+
+- Node.js 18.x
+- npm or yarn
+
+## Setup
+
+1. Install dependencies:
+
+   npm install
+
+2. Start the development server:
+
+   npm run dev
+
+3. Build for production:
+
+   npm run build
+
+4. Preview the production build locally:
+
+   npm run preview
+
+## Notes
+
+- The project uses `vanilla-hcaptcha` and registers the custom element `h-captcha`.
+- The router includes an explore section with nested routes and a movie detail route: `/movie-detail/:source/:id`.
+- The app uses Tailwind CSS via `@tailwindcss/vite` and Flowbite UI components.
+
+## License
+
+This project is provided as-is.
